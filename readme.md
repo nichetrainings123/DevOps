@@ -166,3 +166,97 @@ CI	CD
 Integrates code frequently	Releases software continuously
 Focus on build & test	Focus on deployment
 Detects bugs early	Delivers faster
+
+
+Continuous Integration (CI) – Build & Test Phase
+
+Goal: Detect issues early by integrating code frequently.
+
+🔹 CI Steps (in order)
+
+Code Commit
+
+Developer pushes code to Git (GitHub, GitLab, Bitbucket)
+
+Trigger CI Pipeline
+
+CI tool (Jenkins, GitHub Actions, GitLab CI) starts automatically
+
+Code Checkout
+
+Latest code pulled from repository
+
+Build
+
+Compile code / package app
+
+Example: mvn clean install, npm build, docker build
+
+Static Code Analysis
+
+Code quality & security checks
+
+Tools: SonarQube, ESLint, Checkstyle
+
+Unit Testing
+
+Run automated unit tests
+
+Artifact Creation
+
+Build output created
+
+Example: .jar, .war, Docker image
+
+Store Artifact
+
+Push to artifact repo
+
+Nexus, Artifactory, Docker Hub, ECR
+
+✅ CI ends here
+
+CD Steps (in order)
+
+Artifact Fetch
+
+Pull artifact created by CI
+
+Deploy to Test / QA Environment
+
+Dev / QA / Staging deployment
+
+Integration Testing
+
+API tests, UI tests, regression tests
+
+Approval Step (only for Continuous Delivery)
+
+Manual approval before production
+
+Deploy to Production
+
+Automated in Continuous Deployment
+
+Manual approval in Continuous Delivery
+
+Post-Deployment Checks
+
+Health checks, smoke tests
+
+Monitoring & Logging
+
+Tools: Prometheus, Grafana, CloudWatch, ELK
+
+Rollback (if needed)
+
+Blue-Green / Canary / Rolling rollback
+
+⚖️ CI vs CD – Side-by-Side Comparison
+Aspect	CI (Continuous Integration)	CD (Continuous Deployment/Delivery)
+Purpose	Integrate & test code	Release & deploy code
+Starts When	Code is committed	CI pipeline completes
+Focus	Build + Test	Deploy + Release
+Automation	Fully automated	Automated (Delivery may need approval)
+Ends At	Artifact ready	App live in environment
+Risk	Low (early detection)	Higher (production impact)
